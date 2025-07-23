@@ -5,7 +5,6 @@
       "name": "nextjs",
       "dependencies": {
         "@hookform/resolvers": "^3.9.0",
-        "@next/font": "^14.2.15",
         "@next/swc-wasm-nodejs": "13.5.1",
         "@radix-ui/react-accordion": "^1.2.0",
         "@radix-ui/react-alert-dialog": "^1.1.1",
@@ -117,8 +116,6 @@
     "@next/env": ["@next/env@13.5.1", "", {}, "sha512-CIMWiOTyflFn/GFx33iYXkgLSQsMQZV4jB91qaj/TfxGaGOXxn8C1j72TaUSPIyN7ziS/AYG46kGmnvuk1oOpg=="],
 
     "@next/eslint-plugin-next": ["@next/eslint-plugin-next@13.5.1", "", { "dependencies": { "glob": "7.1.7" } }, "sha512-LBlI3iQvlzRE7Y6AfIyHKuM4T6REGmFgweN2tBqEUVEfgxERBLOutV2xckXEp3Y3VbfJBBXKZNfDzs20gHimSg=="],
-
-    "@next/font": ["@next/font@14.2.15", "", { "peerDependencies": { "next": "*" } }, "sha512-QopYhBmCDDrNDynbi+ZD1hDZXmQXVFo7TmAFp4DQgO/kogz1OLbQ92hPigJbj572eZ3GaaVxNIyYVn3/eAsehg=="],
 
     "@next/swc-darwin-arm64": ["@next/swc-darwin-arm64@13.5.1", "", { "os": "darwin", "cpu": "arm64" }, "sha512-Bcd0VFrLHZnMmJy6LqV1CydZ7lYaBao8YBEdQUVzV8Ypn/l5s//j5ffjfvMzpEQ4mzlAj3fIY+Bmd9NxpWhACw=="],
 

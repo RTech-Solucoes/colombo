@@ -120,7 +120,6 @@ const TransportersScreen = () => {
         </div>
 
         <div className="bg-white rounded-2xl p-6 border border-gray-100">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Entregas por Região</h3>
           <DonutChart data={deliveryRegionsData} />
         </div>
       </div>
@@ -131,12 +130,6 @@ const TransportersScreen = () => {
         transition={{ delay: 0.4 }}
         className="bg-white rounded-2xl p-6 border border-gray-100"
       >
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-lg font-semibold text-gray-900 flex items-center">
-            <Truck className="w-5 h-5 mr-2" />
-            Todas as Transportadoras
-          </h3>
-        </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>

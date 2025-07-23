@@ -67,9 +67,9 @@ const getStatusColor = (status: string) => {
     case 'concluído':
       return 'success';
     case 'cancelado':
-      return 'destructive';
+      return 'danger';
     default:
-      return 'secondary';
+      return 'default';
   }
 };
 

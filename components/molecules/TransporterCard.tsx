@@ -61,15 +61,15 @@ const TransporterCard = ({ transporter, index }: TransporterCardProps) => {
         <div>
           <div className="flex items-center space-x-1 text-gray-500">
             <Clock className="w-3 h-3" />
-            <span>Avg. Time</span>
+            <span>Tempo Médio</span>
           </div>
           <div className="font-medium text-gray-900 mt-1">
-            {transporter.avgDeliveryTime} days
+            {transporter.avgDeliveryTime} dias
           </div>
         </div>
         
         <div>
-          <div className="text-gray-500">Deliveries</div>
+          <div className="text-gray-500">Entregas</div>
           <div className="font-medium text-gray-900 mt-1">
             {transporter.totalDeliveries.toLocaleString()}
           </div>

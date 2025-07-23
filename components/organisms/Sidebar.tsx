@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import Avatar from '@/components/atoms/Avatar';
+import Image from 'next/image';
 import {
   LayoutDashboard,
   Package,
@@ -29,16 +29,18 @@ const Sidebar = ({ activeScreen, setActiveScreen }: SidebarProps) => {
     <motion.aside
       initial={{ x: -280 }}
       animate={{ x: 0 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 50 }}
       className="w-70 bg-gray-900 text-white p-6 flex flex-col h-screen"
     >
       <div className="mb-8">
         <div className="flex items-center space-x-3">
-          <img 
+          <Image
             src="/assets/logo.svg" 
-            alt="Logo" 
-            className="w-8 h-8"
+            alt="Logo"
+            width={209}
+            height={48}
+            className="w-full h-auto"
           />
-          <span className="text-xl font-bold">Colombo</span>
         </div>
       </div>
 
@@ -52,7 +54,7 @@ const Sidebar = ({ activeScreen, setActiveScreen }: SidebarProps) => {
             whileHover={{ x: 4 }}
             onClick={() => setActiveScreen(item.key)}
             className={cn(
-              'w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-200',
+              'w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left ',
               activeScreen === item.key
                 ? 'bg-gray-800 text-white' 
                 : 'text-gray-400 hover:text-white hover:bg-gray-800'
@@ -67,7 +69,7 @@ const Sidebar = ({ activeScreen, setActiveScreen }: SidebarProps) => {
       <div className="space-y-4 border-t border-gray-800 pt-6">
         <motion.button
           whileHover={{ x: 4 }}
-          className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-all duration-200"
+          className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800"
         >
           <Settings className="w-5 h-5" />
           <span className="font-medium">Configurações</span>
@@ -75,7 +77,7 @@ const Sidebar = ({ activeScreen, setActiveScreen }: SidebarProps) => {
         
         <motion.button
           whileHover={{ x: 4 }}
-          className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-all duration-200"
+          className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800"
         >
           <LogOut className="w-5 h-5" />
           <span className="font-medium">Sair</span>

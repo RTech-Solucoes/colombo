@@ -27,27 +27,15 @@ const KPICard = ({ data, index }: KPICardProps) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className={cn(
-        'relative p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-all duration-300',
-        index === 0 && 'bg-gray-900 text-white border-gray-800'
-      )}
+      className="relative p-6 rounded-2xl border border-gray-800 bg-gray-900 text-white shadow-sm hover:shadow-md transition-all duration-300"
     >
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <div className="flex items-center space-x-2 mb-3">
-            <div className={cn(
-              'p-2 rounded-lg',
-              index === 0 ? 'bg-gray-800' : 'bg-gray-50'
-            )}>
-              <Icon className={cn(
-                'w-4 h-4',
-                index === 0 ? 'text-gray-300' : 'text-gray-600'
-              )} />
+            <div className="p-2 rounded-lg bg-gray-800">
+              <Icon className="w-4 h-4 text-gray-300" />
             </div>
-            <span className={cn(
-              'text-sm font-medium',
-              index === 0 ? 'text-gray-300' : 'text-gray-600'
-            )}>
+            <span className="text-sm font-medium text-gray-300">
               {data.title}
             </span>
           </div>
@@ -62,14 +50,27 @@ const KPICard = ({ data, index }: KPICardProps) => {
               {data.value}
             </motion.div>
             
+            {/* Mini progress bar for visual representation */}
+            <div className="mt-2 mb-1">
+              <div className="h-1 rounded-full overflow-hidden bg-gray-800">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: `${Math.min(Math.abs(data.change) * 5, 100)}%` }}
+                  transition={{ delay: index * 0.1 + 0.4, duration: 0.8 }}
+                  className={cn(
+                    'h-full rounded-full',
+                    isPositive ? 'bg-green-400' : 'bg-red-400'
+                  )}
+                />
+              </div>
+            </div>
+            
             <div className="flex items-center space-x-2">
               <div className={cn(
                 'flex items-center space-x-1 px-2 py-1 rounded-full text-xs font-medium',
                 isPositive 
-                  ? 'bg-green-100 text-green-700' 
-                  : 'bg-red-100 text-red-700',
-                index === 0 && isPositive && 'bg-green-900/20 text-green-400',
-                index === 0 && !isPositive && 'bg-red-900/20 text-red-400'
+                  ? 'bg-green-900/20 text-green-400' 
+                  : 'bg-red-900/20 text-red-400'
               )}>
                 {isPositive ? (
                   <TrendingUp className="w-3 h-3" />
@@ -78,10 +79,7 @@ const KPICard = ({ data, index }: KPICardProps) => {
                 )}
                 <span>{Math.abs(data.change)}%</span>
               </div>
-              <span className={cn(
-                'text-xs',
-                index === 0 ? 'text-gray-400' : 'text-gray-500'
-              )}>
+              <span className="text-xs text-gray-400">
                 {data.period}
               </span>
             </div>

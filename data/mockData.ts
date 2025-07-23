@@ -44,7 +44,12 @@ export const topProducts: Product[] = [
   { id: '2', name: 'Relógio Inteligente', sales: 1280, stock: 23, category: 'Eletrônicos' },
   { id: '3', name: 'Suporte para Notebook', sales: 980, stock: 8, category: 'Acessórios' },
   { id: '4', name: 'Cabo USB-C', sales: 850, stock: 156, category: 'Acessórios' },
-  { id: '5', name: 'Alto-falante Bluetooth', sales: 720, stock: 67, category: 'Eletrônicos' }
+  { id: '5', name: 'Alto-falante Bluetooth', sales: 720, stock: 67, category: 'Eletrônicos' },
+  { id: '6', name: 'Mouse Sem Fio', sales: 650, stock: 12, category: 'Eletrônicos' },
+  { id: '7', name: 'Teclado Mecânico', sales: 580, stock: 34, category: 'Acessórios' },
+  { id: '8', name: 'Webcam HD', sales: 520, stock: 28, category: 'Eletrônicos' },
+  { id: '9', name: 'Capa para Celular', sales: 430, stock: 15, category: 'Acessórios' },
+  { id: '10', name: 'Base de Carregamento', sales: 320, stock: 9, category: 'Eletrônicos' }
 ];
 
 export const lowStockProducts: Product[] = [
@@ -85,8 +90,8 @@ export const categoryData: CategoryData[] = [
 ];
 
 export const pendingOrders: Order[] = [
-  { id: 'ORD-001', customer: 'John Smith', status: 'pending', total: 299.99, date: '2024-01-15' },
-  { id: 'ORD-002', customer: 'Sarah Johnson', status: 'processing', total: 159.50, date: '2024-01-15' },
-  { id: 'ORD-003', customer: 'Mike Davis', status: 'pending', total: 89.99, date: '2024-01-14' },
-  { id: 'ORD-004', customer: 'Emily Brown', status: 'processing', total: 249.99, date: '2024-01-14' }
+  { id: 'ORD-001', customer: 'John Smith', status: 'pendente', total: 299.99, date: '2024-01-15' },
+  { id: 'ORD-002', customer: 'Sarah Johnson', status: 'processando', total: 159.50, date: '2024-01-15' },
+  { id: 'ORD-003', customer: 'Mike Davis', status: 'pendente', total: 89.99, date: '2024-01-14' },
+  { id: 'ORD-004', customer: 'Emily Brown', status: 'processando', total: 249.99, date: '2024-01-14' }
 ];

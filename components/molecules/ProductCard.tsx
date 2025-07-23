@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Product } from '@/types/dashboard';
 import Badge from '@/components/atoms/Badge';
-import { Package, TrendingUp } from 'lucide-react';
+import { Package, TrendingUp, Smartphone, Cable, Shirt } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -13,12 +13,26 @@ interface ProductCardProps {
 
 const ProductCard = ({ product, index, showStock = false }: ProductCardProps) => {
   const getStockStatus = (stock: number) => {
-    if (stock <= 10) return { variant: 'danger' as const, text: 'Low Stock' };
-    if (stock <= 20) return { variant: 'warning' as const, text: 'Medium Stock' };
-    return { variant: 'success' as const, text: 'In Stock' };
+    if (stock <= 10) return { variant: 'danger' as const, text: 'Estoque Baixo' };
+    if (stock <= 20) return { variant: 'warning' as const, text: 'Estoque Médio' };
+    return { variant: 'success' as const, text: 'Em Estoque' };
+  };
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'Eletrônicos':
+        return Smartphone;
+      case 'Acessórios':
+        return Cable;
+      case 'Roupas':
+        return Shirt;
+      default:
+        return Package;
+    }
   };
 
   const stockStatus = getStockStatus(product.stock);
+  const CategoryIcon = getCategoryIcon(product.category);
 
   return (
     <motion.div
@@ -30,7 +44,7 @@ const ProductCard = ({ product, index, showStock = false }: ProductCardProps) =>
     >
       <div className="flex items-center space-x-4">
         <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
-          <Package className="w-5 h-5 text-gray-600" />
+          <CategoryIcon className="w-5 h-5 text-gray-600" />
         </div>
         
         <div className="flex-1">
@@ -39,7 +53,7 @@ const ProductCard = ({ product, index, showStock = false }: ProductCardProps) =>
             <span className="text-sm text-gray-500">{product.category}</span>
             {showStock && (
               <Badge variant={stockStatus.variant} size="sm">
-                {product.stock} left
+                {product.stock} em estoque
               </Badge>
             )}
           </div>
@@ -51,7 +65,7 @@ const ProductCard = ({ product, index, showStock = false }: ProductCardProps) =>
           <TrendingUp className="w-4 h-4 text-green-500" />
           <span className="font-semibold text-gray-900">{product.sales}</span>
         </div>
-        <span className="text-sm text-gray-500">sales</span>
+        <span className="text-sm text-gray-500">vendas</span>
       </div>
     </motion.div>
   );

@@ -41,7 +41,7 @@ export interface CategoryData {
 export interface Order {
   id: string;
   customer: string;
-  status: 'pending' | 'processing' | 'shipped' | 'delivered';
+  status: 'pendente' | 'processando' | 'enviado' | 'entregue';
   total: number;
   date: string;
 }
