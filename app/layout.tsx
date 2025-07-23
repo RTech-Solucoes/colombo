@@ -1,9 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import {Sora} from "next/font/google";
+
+const sans = Sora({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Colombo - E-commerce Dashboard',
-  description: 'Modern e-commerce dashboard for analytics and management',
+  title: 'Colombo - Dashboard E-commerce',
+  description: 'Dashboard moderno de e-commerce para análises e gestão',
 };
 
 export default function RootLayout({
@@ -12,16 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
+        <link rel="icon" href="/assets/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body style={{ fontFamily: 'Sora, sans-serif' }}>
+      <body className={sans.className}>
         {children}
       </body>
     </html>

@@ -5,27 +5,26 @@ import { cn } from '@/lib/utils';
 import Avatar from '@/components/atoms/Avatar';
 import {
   LayoutDashboard,
-  BarChart3,
   Package,
   ShoppingCart,
-  Users,
   Settings,
-  HelpCircle,
   LogOut,
-  Filter,
-  Eye
+  Truck
 } from 'lucide-react';
 
 const navigationItems = [
-  { icon: Eye, label: 'Overview', active: true },
-  { icon: BarChart3, label: 'Summary' },
-  { icon: Filter, label: 'Custom view' },
-  { icon: Package, label: 'Products' },
-  { icon: ShoppingCart, label: 'Orders' },
-  { icon: Users, label: 'Customers' }
+  { icon: LayoutDashboard, label: 'Visão Geral', key: 'overview' },
+  { icon: Package, label: 'Produtos', key: 'products' },
+  { icon: ShoppingCart, label: 'Pedidos', key: 'orders' },
+  { icon: Truck, label: 'Transportadoras', key: 'transporters' }
 ];
 
-const Sidebar = () => {
+interface SidebarProps {
+  activeScreen: string;
+  setActiveScreen: (screen: string) => void;
+}
+
+const Sidebar = ({ activeScreen, setActiveScreen }: SidebarProps) => {
   return (
     <motion.aside
       initial={{ x: -280 }}
@@ -34,9 +33,11 @@ const Sidebar = () => {
     >
       <div className="mb-8">
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-            <span className="text-gray-900 font-bold text-sm">C</span>
-          </div>
+          <img 
+            src="/assets/logo.svg" 
+            alt="Logo" 
+            className="w-8 h-8"
+          />
           <span className="text-xl font-bold">Colombo</span>
         </div>
       </div>
@@ -49,9 +50,10 @@ const Sidebar = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ x: 4 }}
+            onClick={() => setActiveScreen(item.key)}
             className={cn(
               'w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-200',
-              item.active 
+              activeScreen === item.key
                 ? 'bg-gray-800 text-white' 
                 : 'text-gray-400 hover:text-white hover:bg-gray-800'
             )}
@@ -68,15 +70,7 @@ const Sidebar = () => {
           className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-all duration-200"
         >
           <Settings className="w-5 h-5" />
-          <span className="font-medium">Settings</span>
-        </motion.button>
-        
-        <motion.button
-          whileHover={{ x: 4 }}
-          className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-all duration-200"
-        >
-          <HelpCircle className="w-5 h-5" />
-          <span className="font-medium">Help</span>
+          <span className="font-medium">Configurações</span>
         </motion.button>
         
         <motion.button
@@ -84,7 +78,7 @@ const Sidebar = () => {
           className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-all duration-200"
         >
           <LogOut className="w-5 h-5" />
-          <span className="font-medium">Log out</span>
+          <span className="font-medium">Sair</span>
         </motion.button>
       </div>
     </motion.aside>

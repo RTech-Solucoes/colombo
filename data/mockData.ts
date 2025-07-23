@@ -3,62 +3,62 @@ import { KPIData, Product, TransporterPerformance, SalesData, CategoryData, Orde
 export const kpiData: KPIData[] = [
   {
     id: '1',
-    title: 'Total Sales',
-    value: '$9,328.55',
+    title: 'Vendas Totais',
+    value: 'R$ 9.328,55',
     change: 15.6,
     changeType: 'increase',
-    period: 'this week',
+    period: 'esta semana',
     icon: 'DollarSign'
   },
   {
     id: '2',
-    title: 'Visitors',
-    value: '12,302',
+    title: 'Visitantes',
+    value: '12.302',
     change: 12.7,
     changeType: 'increase',
-    period: 'this week',
+    period: 'esta semana',
     icon: 'Users'
   },
   {
     id: '3',
-    title: 'Orders',
+    title: 'Pedidos',
     value: '963',
     change: -2.1,
     changeType: 'decrease',
-    period: 'this week',
+    period: 'esta semana',
     icon: 'ShoppingCart'
   },
   {
     id: '4',
-    title: 'Conversion Rate',
-    value: '7.8%',
+    title: 'Taxa de Conversão',
+    value: '7,8%',
     change: 3.2,
     changeType: 'increase',
-    period: 'this month',
+    period: 'este mês',
     icon: 'TrendingUp'
   }
 ];
 
 export const topProducts: Product[] = [
-  { id: '1', name: 'Wireless Headphones', sales: 1420, stock: 45, category: 'Electronics' },
-  { id: '2', name: 'Smart Watch', sales: 1280, stock: 23, category: 'Electronics' },
-  { id: '3', name: 'Laptop Stand', sales: 980, stock: 8, category: 'Accessories' },
-  { id: '4', name: 'USB-C Cable', sales: 850, stock: 156, category: 'Accessories' },
-  { id: '5', name: 'Bluetooth Speaker', sales: 720, stock: 67, category: 'Electronics' }
+  { id: '1', name: 'Fones de Ouvido Sem Fio', sales: 1420, stock: 45, category: 'Eletrônicos' },
+  { id: '2', name: 'Relógio Inteligente', sales: 1280, stock: 23, category: 'Eletrônicos' },
+  { id: '3', name: 'Suporte para Notebook', sales: 980, stock: 8, category: 'Acessórios' },
+  { id: '4', name: 'Cabo USB-C', sales: 850, stock: 156, category: 'Acessórios' },
+  { id: '5', name: 'Alto-falante Bluetooth', sales: 720, stock: 67, category: 'Eletrônicos' }
 ];
 
 export const lowStockProducts: Product[] = [
-  { id: '3', name: 'Laptop Stand', sales: 980, stock: 8, category: 'Accessories' },
-  { id: '6', name: 'Wireless Mouse', sales: 650, stock: 12, category: 'Electronics' },
-  { id: '7', name: 'Phone Case', sales: 430, stock: 15, category: 'Accessories' },
-  { id: '8', name: 'Charging Pad', sales: 320, stock: 9, category: 'Electronics' }
+  { id: '3', name: 'Suporte para Notebook', sales: 980, stock: 8, category: 'Acessórios' },
+  { id: '6', name: 'Mouse Sem Fio', sales: 650, stock: 12, category: 'Eletrônicos' },
+  { id: '7', name: 'Capa para Celular', sales: 430, stock: 15, category: 'Acessórios' },
+  { id: '8', name: 'Base de Carregamento', sales: 320, stock: 9, category: 'Eletrônicos' }
 ];
 
 export const transporterData: TransporterPerformance[] = [
-  { id: '1', name: 'FastShip', onTimeRate: 94.2, totalDeliveries: 1240, avgDeliveryTime: 2.1, rating: 4.8 },
-  { id: '2', name: 'QuickDelivery', onTimeRate: 89.7, totalDeliveries: 890, avgDeliveryTime: 2.8, rating: 4.5 },
-  { id: '3', name: 'SpeedPost', onTimeRate: 76.3, totalDeliveries: 1560, avgDeliveryTime: 3.2, rating: 3.9 },
-  { id: '4', name: 'RapidExpress', onTimeRate: 68.1, totalDeliveries: 670, avgDeliveryTime: 4.1, rating: 3.2 }
+  { id: '1', name: 'Entrega Rápida', onTimeRate: 94.2, totalDeliveries: 1240, avgDeliveryTime: 2.1, rating: 4.8 },
+  { id: '2', name: 'Express Logística', onTimeRate: 89.7, totalDeliveries: 890, avgDeliveryTime: 2.8, rating: 4.5 },
+  { id: '3', name: 'Correios Rápidos', onTimeRate: 76.3, totalDeliveries: 1560, avgDeliveryTime: 3.2, rating: 3.9 },
+  { id: '4', name: 'Transporte Ágil', onTimeRate: 68.1, totalDeliveries: 670, avgDeliveryTime: 4.1, rating: 3.2 }
 ];
 
 export const salesData: SalesData[] = [
@@ -79,9 +79,9 @@ export const salesData: SalesData[] = [
 ];
 
 export const categoryData: CategoryData[] = [
-  { name: 'Electronics', value: 6200, percentage: 68 },
-  { name: 'Accessories', value: 2100, percentage: 23 },
-  { name: 'Clothing', value: 800, percentage: 9 }
+  { name: 'Eletrônicos', value: 6200, percentage: 68 },
+  { name: 'Acessórios', value: 2100, percentage: 23 },
+  { name: 'Roupas', value: 800, percentage: 9 }
 ];
 
 export const pendingOrders: Order[] = [

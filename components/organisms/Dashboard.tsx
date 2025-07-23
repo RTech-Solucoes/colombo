@@ -21,6 +21,11 @@ import { AlertTriangle, Package, Truck, Clock } from 'lucide-react';
 const Dashboard = () => {
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">Visão Geral</h1>
+        <p className="text-gray-600">Acompanhe o desempenho geral da sua loja online</p>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
         {kpiData.map((kpi, index) => (
           <KPICard key={kpi.id} data={kpi} index={index} />
@@ -47,7 +52,7 @@ const Dashboard = () => {
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-semibold text-gray-900 flex items-center">
               <Package className="w-5 h-5 mr-2" />
-              Top Selling Products
+              Produtos Mais Vendidos
             </h3>
           </div>
           <div className="space-y-4">
@@ -66,7 +71,7 @@ const Dashboard = () => {
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-semibold text-gray-900 flex items-center">
               <AlertTriangle className="w-5 h-5 mr-2 text-red-500" />
-              Low Stock Alert
+              Alerta de Estoque Baixo
             </h3>
           </div>
           <div className="space-y-4">
@@ -87,7 +92,7 @@ const Dashboard = () => {
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-semibold text-gray-900 flex items-center">
               <Truck className="w-5 h-5 mr-2" />
-              Transporter Performance
+              Desempenho das Transportadoras
             </h3>
           </div>
           <div className="space-y-4">
@@ -106,9 +111,9 @@ const Dashboard = () => {
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-semibold text-gray-900 flex items-center">
               <Clock className="w-5 h-5 mr-2" />
-              Pending Orders
+              Pedidos Pendentes
             </h3>
-            <Badge variant="warning">{pendingOrders.length} pending</Badge>
+            <Badge variant="warning">{pendingOrders.length} pendentes</Badge>
           </div>
           <div className="space-y-4">
             {pendingOrders.map((order, index) => (
@@ -125,10 +130,10 @@ const Dashboard = () => {
                 </div>
                 <div className="text-right">
                   <div className="font-semibold text-gray-900">
-                    ${order.total}
+                    R$ {order.total.toFixed(2)}
                   </div>
                   <Badge variant={order.status === 'pending' ? 'warning' : 'info'} size="sm">
-                    {order.status}
+                    {order.status === 'pending' ? 'pendente' : 'processando'}
                   </Badge>
                 </div>
               </motion.div>
